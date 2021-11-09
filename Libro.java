@@ -40,7 +40,7 @@ public class Libro {
         System.out.println("El titulo es " + titulo);
     }
     
-    public void setNumeroPaginas(int newNumeroPaginas){
-        numeroPaginas = newNumeroPaginas;
+    public int getNumeroPaginas(){
+        return numeroPaginas;
     }
 }
