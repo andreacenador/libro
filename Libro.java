@@ -14,15 +14,18 @@ public class Libro {
     private String titulo;
     private int numeroPaginas;
     private String numeroReferencia;
+    private int vecesPrestado;
+    
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
      */
-    public Libro(String autorLibro, String tituloLibro,int numeroDePaginas)
+    public Libro(String autorLibro, String tituloLibro,int numeroDePaginas, int numeroVecesPrestado)
     {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas= numeroDePaginas;
         numeroReferencia = "";
+        vecesPrestado = numeroVecesPrestado;
     }
 
     public String getAutor(){
@@ -55,6 +58,8 @@ public class Libro {
         else {
             System.out.println("Numero de referencia: zzz");
         }
+        System.out.println("Numero de veces Prestado: " + vecesPrestado);
+        System.out.println(" ");
     }
 
     public String getDetalles(){
@@ -66,7 +71,7 @@ public class Libro {
             numeroReferencia = "zzz";
         }
 
-        detalles = "Titulo: " + titulo + " // Autor: " + autor + " // Numero de paginas: " + numeroPaginas + " // Numero de Referencia: " + numeroReferencia;
+        detalles = "Titulo: " + titulo + " // Autor: " + autor + " // Numero de paginas: " + numeroPaginas + " // Numero de Referencia: " + numeroReferencia + " // Numero de veces prestado: " + vecesPrestado;
         return detalles;
     }
 
@@ -82,5 +87,13 @@ public class Libro {
             System.out.println("Error, tiene que ser mas de 3 caracteres");
         }
         
+    }
+    
+    public void prestar(){
+        vecesPrestado = vecesPrestado + 1;
+    }
+    
+    public int getVecesPrestado(){
+        return vecesPrestado;
     }
 }
